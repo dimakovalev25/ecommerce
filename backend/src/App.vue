@@ -1,20 +1,20 @@
 <script setup>
 import {RouterLink, RouterView} from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
+import {computed} from "vue";
+import store from "@/store";
+
+const test = computed(() => store.state.test)
 </script>
 
 <template>
 
     <header>
-        <h1 class="text-3xl font-bold underline">vue</h1>
-        <div class="wrapper">
-            <HelloWorld class=" mt-3 bg-amber-900" msg="You did it!"/>
-
-            <nav>
-                <!--        <RouterLink to="/">Home</RouterLink>
-                        <RouterLink to="/about">About</RouterLink>-->
-            </nav>
-        </div>
+        <nav>
+            <RouterLink class="ml-3" to="/">Home</RouterLink>
+            <RouterLink class="ml-3" to="/about">About</RouterLink>
+            <RouterLink class="ml-3" to="/login">Login</RouterLink>
+        </nav>
     </header>
 
     <RouterView/>

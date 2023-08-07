@@ -3,8 +3,8 @@
 </script>
 
 <template>
-<div class="w-1">
-    kkuhiuh
+<div class="bg-amber-700">
+   welcome
 </div>
 
 </template>
