@@ -11,7 +11,6 @@ const test = computed(() => store.state.test)
 
     <header>
         <nav>
-            <RouterLink class="ml-3" to="/">Home</RouterLink>
             <RouterLink class="ml-3" to="/login">Login</RouterLink>
         </nav>
     </header>
