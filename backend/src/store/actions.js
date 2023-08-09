@@ -1,27 +1,29 @@
 import axiosClient from "../axios";
 
 export function getUser({commit}, data) {
-    return axiosClient.get('/user', data)
-        .then(({data}) => {
-            commit('setUser', data.user);
-            return data;
-        })
+  return axiosClient.get('/user', data)
+    .then(({data}) => {
+      commit('setUser', data);
+      return data;
+    })
 }
 
 export function login({commit}, data) {
-    return axiosClient.post('/login', data)
-        .then(({data}) => {
-            commit('setUser', data.user);
-            commit('setToken', data.token)
-            return data;
-        })
+  return axiosClient.post('/login', data)
+    .then(({data}) => {
+        console.log('here')
+      commit('setUser', data.user);
+      commit('setToken', data.token)
+      return data;
+    })
+      .catch(res=>console.log(res))
 }
 
 export function logout({commit}) {
-    return axiosClient.post('/logout')
-        .then((response) => {
-            commit('setToken', null)
+  return axiosClient.post('/logout')
+    .then((response) => {
+      commit('setToken', null)
 
-            return response;
-        })
+      return response;
+    })
 }

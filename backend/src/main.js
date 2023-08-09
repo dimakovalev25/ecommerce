@@ -1,17 +1,11 @@
-// import './assets/main.css'
-import { createApp } from 'vue'
-import App from './App.vue'
+import {createApp} from 'vue'
+import store from './store'
 import router from './router'
-import store from'./store'
-import './index.css'
+import './index.css';
 
-const app = createApp(App)
-app.use(router)
-app.use(store)
-app.mount('#app')
-/*
-import { createApp } from 'vue'
 import App from './App.vue'
-import './index.css'
 
-createApp(App).mount('#app')*/
+createApp(App)
+  .use(store)
+  .use(router)
+  .mount('#app')
